@@ -1,12 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using Shopping.API.Data;
 using Shopping.API.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Shopping.API.Controllers
 {
@@ -26,10 +21,13 @@ namespace Shopping.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<Product>> Get()
         {
-            return await _context
+            var t = await _context
                             .Products
                             .Find(p => true)
                             .ToListAsync();
+
+
+            return t;
         }
 
     }
