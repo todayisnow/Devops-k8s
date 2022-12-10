@@ -1,10 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using Shopping.API.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Shopping.API.Data
 {
@@ -27,7 +22,17 @@ namespace Shopping.API.Data
             if (!existProduct)
             {
                 productCollection.InsertManyAsync(GetPreconfiguredProducts());
+                return;
             }
+            var update =
+                productCollection.Find(p => p.Name == "IPhone X").FirstOrDefault().Price
+                < GetPreconfiguredProducts().FirstOrDefault(p => p.Name == "IPhone X").Price;
+            if (update)
+            {
+                productCollection.DeleteMany(p => true);
+                productCollection.InsertManyAsync(GetPreconfiguredProducts());
+            }
+
         }
 
         private static IEnumerable<Product> GetPreconfiguredProducts()
@@ -37,15 +42,15 @@ namespace Shopping.API.Data
                 new Product()
                 {
                     Name = "IPhone X",
-                    Description = "This phone is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
+                    Description = "V2 This phone docker-compose is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
                     ImageFile = "product-1.png",
-                    Price = 950.00M,
+                    Price = 980.00M,
                     Category = "Smart Phone"
                 },
                 new Product()
                 {
                     Name = "Samsung 10",
-                    Description = "This phone is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
+                    Description = "This phone AKS is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
                     ImageFile = "product-2.png",
                     Price = 840.00M,
                     Category = "Smart Phone"
@@ -83,6 +88,6 @@ namespace Shopping.API.Data
                     Category = "Home Kitchen"
                 }
             };
-        }        
+        }
     }
 }
