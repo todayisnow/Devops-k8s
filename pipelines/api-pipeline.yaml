@@ -3,7 +3,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-  branch:
+  branches:
     include:
       - master
   paths:
@@ -20,7 +20,7 @@ variables:
   dockerRegistryServiceConnection: '3dba55e3-eab1-49c1-8ee2-d9a736a76b65'
   imageRepository: 'shoppingapi'
   containerRegistry: 'todayisnowshopacr.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: 'Shopping.API/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'todayisnowshopacr11514ea9-auth'
 
