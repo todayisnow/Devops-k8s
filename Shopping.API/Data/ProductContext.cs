@@ -42,9 +42,9 @@ namespace Shopping.API.Data
                 new Product()
                 {
                     Name = "IPhone X",
-                    Description = "V2 This phone docker-compose is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
+                    Description = "PipeLine This phone docker-compose is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
                     ImageFile = "product-1.png",
-                    Price = 980.00M,
+                    Price = 990.00M,
                     Category = "Smart Phone"
                 },
                 new Product()
