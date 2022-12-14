@@ -31,6 +31,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aks", "Aks", "{9C881E7C-B0A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F0263E4-CE54-4559-9B82-3057403B014F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipelines", "pipelines", "{87EE8793-B153-4538-9558-916F1B482E21}"
+	ProjectSection(SolutionItems) = preProject
+		pipelines\client-pipeline.yaml = pipelines\client-pipeline.yaml
+		pipelines\api-pipeline.yaml = pipelines\api-pipeline.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
