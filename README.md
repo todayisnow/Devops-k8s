@@ -6,6 +6,9 @@
 | Shopping API | [![Build Status](https://dev.azure.com/eaboelsaoud/Shopping/_apis/build/status/ShoppingApi?branchName=master)](https://dev.azure.com/eaboelsaoud/Shopping/_build/latest?definitionId=9&branchName=master) | | |
 
 
+[![Build Status](https://dev.azure.com/eaboelsaoud/Shopping/_apis/build/status/ShoppingApi?branchName=master&stageName=Deploy%20stage&jobName=Deploy)](https://dev.azure.com/eaboelsaoud/Shopping/_build/latest?definitionId=9&branchName=master)
+
+
 
 
 
